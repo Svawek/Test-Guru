@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  current_test: 1
+  tests: one
+  passed_tests: MyString
+
+two:
+  name: MyString
+  current_test: 1
+  tests: two
+  passed_tests: MyString
