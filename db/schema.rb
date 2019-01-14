@@ -13,14 +13,12 @@
 ActiveRecord::Schema.define(version: 2019_01_13_191854) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "question_id", null: false
-    t.string "user_answer", null: false
+    t.string "text", null: false
     t.boolean "correct", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
-    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -31,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_01_13_191854) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.string "answer", null: false
     t.integer "test_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,11 +46,9 @@ ActiveRecord::Schema.define(version: 2019_01_13_191854) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "test_id"
     t.string "passed_tests"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_users_on_test_id"
   end
 
 end

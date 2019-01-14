@@ -1,3 +1,3 @@
 class Question < ApplicationRecord
-  belongs_to :tests
+  belongs_to :test
 end
