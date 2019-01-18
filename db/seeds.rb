@@ -28,13 +28,13 @@ tests = Test.create(
                  category_id: categories[0].id},
                 {title: 'Node.js',
                  level: 3,
-                 category_id: categories[1].id},
+                 category_id: categories[3].id},
                 {title: 'Python beginner',
                  level: 1,
-                 category_id: categories[2].id},
+                 category_id: categories[1].id},
                 {title: 'Go advanced',
                  level: 2,
-                 category_id: categories[3].id}]
+                 category_id: categories[2].id}]
 )
 
 questions = Question.create(
