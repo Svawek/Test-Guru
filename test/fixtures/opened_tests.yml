@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  test: one
+  test_passed: false
+  test_opened: false
+
+two:
+  user: two
+  test: two
+  test_passed: false
+  test_opened: false
