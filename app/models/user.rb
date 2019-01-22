@@ -3,7 +3,4 @@ class User < ApplicationRecord
     Test.joins("JOIN opened_tests ON tests.id = opened_tests.test_id").where(opened_tests: { user_id: id }).where(level: value)
   end
 
-  def show_id
-    p self.id
-  end
 end

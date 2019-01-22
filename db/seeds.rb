@@ -83,7 +83,7 @@ answers = Answer.create(
                       correct: true}]
 )
 
-users = User.create(
+users = UserTest.create(
                 [{name: 'user1',
                  passed_tests: '1 5'},
                  {name: 'user2',
@@ -91,19 +91,19 @@ users = User.create(
 )
 
 opened_tests = OpenedTest.create(
-                             [{user_id: users[0].id,
+                             [{user_test_id: users[0].id,
                               test_id: tests[1].id,
                               test_passed: true},
-                              {user_id: users[0].id,
+                              {user_test_id: users[0].id,
                                test_id: tests[3].id,
                                test_passed: true},
-                              {user_id: users[0].id,
+                              {user_test_id: users[0].id,
                                test_id: tests[0].id,
                                test_opened: true},
-                              {user_id: users[1].id,
+                              {user_test_id: users[1].id,
                               test_id: tests[1].id,
                               test_opened: true},
-                              {user_id: users[1].id,
+                              {user_test_id: users[1].id,
                                test_id: tests[0].id,
                                test_passed: true}]
 )
