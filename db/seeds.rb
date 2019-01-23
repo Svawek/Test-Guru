@@ -10,7 +10,7 @@ Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
 User.destroy_all
-OpenedTest.destroy_all
+UsersTest.destroy_all
 
 categories = Category.create(
                          [{ title: 'Ruby'},
@@ -83,29 +83,29 @@ answers = Answer.create(
                       correct: true}]
 )
 
-users = UserTest.create(
+users = User.create(
                 [{name: 'user1',
                  passed_tests: '1 5'},
                  {name: 'user2',
                   passed_tests: '2 3 4'}]
 )
 
-opened_tests = OpenedTest.create(
-                             [{user_test_id: users[0].id,
+users_tests = UsersTest.create(
+                             [{user_id: users[0].id,
                               test_id: tests[1].id,
                               test_passed: true},
-                              {user_test_id: users[0].id,
+                              {user_id: users[0].id,
                                test_id: tests[3].id,
                                test_passed: true},
-                              {user_test_id: users[0].id,
+                              {user_id: users[0].id,
                                test_id: tests[0].id,
                                test_opened: true},
-                              {user_test_id: users[1].id,
+                              {user_id: users[1].id,
                               test_id: tests[1].id,
                               test_opened: true},
-                              {user_test_id: users[1].id,
+                              {user_id: users[1].id,
                                test_id: tests[0].id,
                                test_passed: true}]
 )
 
-p "Base created. Categories: #{Category.count}, Tests: #{Test.count}, Questions: #{Question.count}, Answers: #{Answer.count}, Users: #{User.count}, Opened Tests: #{OpenedTest.count}"
+p "Base created. Categories: #{Category.count}, Tests: #{Test.count}, Questions: #{Question.count}, Answers: #{Answer.count}, Users: #{User.count}, UsersTests: #{UsersTest.count}"
