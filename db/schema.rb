@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_01_23_103049) do
     t.boolean "admin", default: false
   end
 
-  create_table "users_tests", id: false, force: :cascade do |t|
+  create_table "users_tests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "test_id"
     t.boolean "test_passed"
