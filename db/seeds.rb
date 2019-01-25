@@ -19,21 +19,33 @@ categories = Category.create(
                          {title: 'JavaScript'}]
 )
 
+users = User.create(
+    [{name: 'user1',
+      admin: false},
+     {name: 'user2',
+      admin: true}]
+)
+
 tests = Test.create(
       [{title: 'Ruby beginner',
                  level: 1,
+        author_id: users[0].id,
                  category_id: categories[0].id},
                 {title: 'Rails beginner',
                  level: 2,
+                 author_id: users[0].id,
                  category_id: categories[0].id},
                 {title: 'Node.js',
                  level: 3,
+                 author_id: users[0].id,
                  category_id: categories[3].id},
                 {title: 'Python beginner',
                  level: 1,
+                 author_id: users[0].id,
                  category_id: categories[1].id},
                 {title: 'Go advanced',
                  level: 2,
+                 author_id: users[0].id,
                  category_id: categories[2].id}]
 )
 
@@ -83,12 +95,7 @@ answers = Answer.create(
                       correct: true}]
 )
 
-users = User.create(
-                [{name: 'user1',
-                 passed_tests: '1 5'},
-                 {name: 'user2',
-                  passed_tests: '2 3 4'}]
-)
+
 
 users_tests = UsersTest.create(
                              [{user_id: users[0].id,
@@ -108,4 +115,4 @@ users_tests = UsersTest.create(
                                test_passed: true}]
 )
 
-p "Base created. Categories: #{Category.count}, Tests: #{Test.count}, Questions: #{Question.count}, Answers: #{Answer.count}, Users: #{User.count}, UsersTests: #{UsersTest.count}"
+p "Base created. Categories: #{Category.count}, Users: #{User.count}, Tests: #{Test.count}, Questions: #{Question.count}, Answers: #{Answer.count}, UsersTests: #{UsersTest.count}"
