@@ -4,7 +4,13 @@ class Test < ApplicationRecord
   has_many :questions
   has_and_belongs_to_many :users, join_table: 'users_tests'
 
-  def self.by_category(category)
-    joins(:category).where(categories: { title: category }).order(title: :desc).pluck(:title)
+  scope :by_level, -> (level) {where(level: level)}
+  scope :simple, -> { by_level(1..2) }
+  scope :intermediate, -> { by_level(3..5) }
+  scope :advanced, -> { by_level(6..Float::INFINITY) }
+  scope :by_category, -> (category) {joins(:category).where(categories: { title: category })}
+
+  def self.test_title
+    order(title: :desc).pluck(:title)
   end
 end
