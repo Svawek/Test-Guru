@@ -10,6 +10,10 @@ class Test < ApplicationRecord
   scope :advanced, -> { by_level(6..Float::INFINITY) }
   scope :by_category, -> (category) {joins(:category).where(categories: { title: category })}
 
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :title, uniqueness: {scope: :level}
+
   def self.test_title
     order(title: :desc).pluck(:title)
   end
