@@ -4,10 +4,9 @@ class Answer < ApplicationRecord
   scope :correct, -> { where(correct: true) }
 
   validates :text, presence: true
-  validate :amount_by_question_id
+  validate :amount_by_question_id, on: :create
 
   def amount_by_question_id
-    answers = Answer.where(question_id: self.question_id).count
-    errors.add(:answers_amount, "can't be more than 4") if answers > 3
+    errors.add(:answers_amount, "can't be more than 4") if question.answers.count > 3
   end
 end
