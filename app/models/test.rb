@@ -14,7 +14,7 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: {scope: :level}
 
-  def self.test_title
-    by_category.order(title: :desc).pluck(:title)
+  def self.titles_by_category(category)
+    by_category(category).order(title: :desc).pluck(:title)
   end
 end
