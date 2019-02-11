@@ -9,10 +9,7 @@
 <body>
     <h2>Question #<%= @question_id %>:</h2>
     <p><%= @question.body %></p>
-    <form action="/question/:id" method="post">
-        <input name="_method" type="hidden" value="delete">
-        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-        <input type="submit" value="Destroy">
-    </form>
+    <%= link_to 'Delete', question_path, method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
 </body>
 </html>

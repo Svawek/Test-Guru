@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create]
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
     @questions = Question.where(test_id: @test_id)
@@ -21,7 +22,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy
+    Question.find(params[:id]).destroy
+
+    redirect_to '/tests/1/questions'
   end
 
   private
@@ -33,5 +36,9 @@ class QuestionsController < ApplicationController
 
   def question_param
     params.require(:question).permit(:body)
+  end
+
+  def rescue_with_question_not_found
+    render plain: "Question not found"
   end
 end
