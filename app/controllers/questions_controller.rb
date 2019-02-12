@@ -1,14 +1,14 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create]
+  before_action :find_question, only: %i[show destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
-    @questions = Question.where(test_id: @test_id)
+    @questions = Question.where(test_id: @test.id)
   end
 
   def show
-    @question_id = params["id"].to_i
-    @question = Question.find(@question_id)
+
   end
 
   def new
@@ -16,22 +16,28 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_param)
-    question.test_id = @test_id
-    question.save
+    if question_param[:body].empty?
+      render plain: "Question field is empty!"
+    else
+      question = @test.questions.create(question_param)
+      redirect_to test_questions_path(question.test_id)
+    end
   end
 
   def destroy
-    Question.find(params[:id]).destroy
-
-    redirect_to '/tests/1/questions'
+    @question.destroy
+    redirect_to test_questions_path(@question.test_id)
   end
 
   private
-  attr_reader :test_id
+  attr_reader :test, :question
+
+  def find_question
+    @question = Question.find(params[:id])
+  end
 
   def find_test
-    @test_id = params["test_id"].to_i
+    @test = Test.find(params[:test_id])
   end
 
   def question_param

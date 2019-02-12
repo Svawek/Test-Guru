@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Create new question</h1>
-    <form action="/tests/1/questions" method="post">
+    <form action=<%= test_questions_path(params[:test_id]) %> method="post">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
     <p>
