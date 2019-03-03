@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
   
   def index
-    @questions = Question.where(test_id: @test.id)
+    @questions = @test.questions
   end
 
   def show
@@ -16,11 +16,11 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if question_param[:body].empty?
-      render plain: "Question field is empty!"
-    else
-      question = @test.questions.create(question_param)
+    question = @test.questions.new(question_param)
+    if question.save
       redirect_to test_questions_path(question.test_id)
+    else
+      render plain: "Save error!"
     end
   end
 
