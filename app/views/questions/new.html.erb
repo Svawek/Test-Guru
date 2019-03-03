@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create question</title>
+</head>
+<body>
+    <h1>Create new question</h1>
+    <form action=<%= test_questions_path(params[:test_id]) %> method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <p>
+    <label for="question-body">Question:</label>
+    <input type="text" name="question[body]" id="question-body">
+    </p>
+    <input type="submit" value="Create">
+    </form>
+</body>
+</html>
