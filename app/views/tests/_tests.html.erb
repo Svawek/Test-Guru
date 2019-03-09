@@ -1,0 +1,8 @@
+<% @tests.each do |test| %>
+    <tr>
+      <td><%= test.title %></td>
+      <td><%= test.level %></td>
+      <td><%= test.questions.count %></td>
+      <td><%= link_to 'View', test_questions_path(test) %></td>
+    </tr>
+  <% end %>

@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>List of Questions for Test "<%= @test.title %>":</h2>
-    <ol>
-        <% @questions.each do |question| %>
-            <li><%= question.body %></li>
-        <% end %>
-    </ol>
-</body>
-</html>
+<h2>List of Questions for Test "<%= @test.title %>":</h2>
+<table>
+  <tr>
+    <th>Question</th>
+    <th colspan="3">Action</th>
+  </tr>
+
+  <%= render 'questions'%>
+</table>
+
+<p>
+  <%= link_to 'New question', new_test_question_path %>
+</p>
+
+<p>
+  <%= link_to 'Back', tests_path %>
+</p>
