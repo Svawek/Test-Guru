@@ -4,7 +4,6 @@ module ApplicationHelper
   end
 
   def github_url(author, depo)
-    link = "https://github.com/#{author}/#{depo}"
-    "<a href='#{link}' target='_blank'>Проект 'Test Guru'</a>".html_safe
+    link_to 'Проект "Test Guru"', "https://github.com/#{author}/#{depo}", :target => "_blank"
   end
 end
