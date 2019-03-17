@@ -10,7 +10,6 @@ class TestsController < ApplicationController
   end
 
   private
-  attr_reader :test
 
   def find_test
     @test = Test.find(params[:id])
