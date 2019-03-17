@@ -1,1 +1,9 @@
-<h1>Test complected</h1>
+<h1>Test completed</h1>
+
+<% if @test_passage.passed? %>
+  <p class="passed">Your result is: <%= @test_passage.result_percent %> %. You passed Test</p>
+<% else %>
+  <p class="failed">Your result is: <%= @test_passage.result_percent %> %. You didn't pass Test</p>
+<% end %>
+
+<p><%= link_to 'Back to all tests', tests_path %></p>
