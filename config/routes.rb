@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get :sign_up, to 'user#new'
+  resources :users, only: :create
+
   resources :tests do
 
     member do
