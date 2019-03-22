@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_193355) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
-    t.string "pasport_digest"
+    t.string "password_digest"
     t.string "email"
     t.index ["name"], name: "index_users_on_name", unique: true
   end
