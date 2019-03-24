@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :find_test, only: %i[show start]
   before_action :set_user, only: %i[start]
 

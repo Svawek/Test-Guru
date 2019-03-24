@@ -21,9 +21,13 @@ categories = Category.create(
 
 users = User.create(
     [{name: 'user1',
-      admin: false},
+      admin: false,
+      email: 'wew@wew.org',
+      password_digest: 'dsd'},
      {name: 'user2',
-      admin: true}]
+      admin: true,
+      email: 'wrw@wew.org',
+      password_digest: 'dfd'}]
 )
 
 tests = Test.create(
