@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to tests_path
+      redirect_to cookies[:path_after_login].nil? ? test_path : cookies[:path_after_login]
     else
       render :new
     end
