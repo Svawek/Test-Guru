@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <div class="nav user">
+      <p><%= link_to 'Test Guru Project', tests_path %></p>
+      <% if logged_in? %>
+        <p>Welcome, <b><%= current_user.name %></b> Guru <br>
+          <%= link_to 'Sign out', logout_path, method: :delete %>
+        </p>
+      <% else %>
+        <p>
+          <%= link_to 'Login', login_path %> or <%= link_to 'Sign up', signup_path %>
+        </p>
+      <% end %>
+    </div>
+
+
     <%= yield %>
 
     <%= render 'shared/footer'%>

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  root 'test#index'
+
+  get :login, to: 'sessions#new'
+  delete :logout, to: 'sessions#destroy'
+  resources :sessions, only: :create
+
+  get :signup, to: 'users#new'
+  resources :users, only: :create
+
   resources :tests do
 
     member do
