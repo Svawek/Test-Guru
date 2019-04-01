@@ -1,5 +1,5 @@
 class Admin::TestsController < Admin::BaseController
-  skip_before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!, except: :index
   before_action :find_test, only: %i[show start]
 
   def index

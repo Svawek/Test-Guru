@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
-  #authenticated :admin do
-  #  root to: 'admin/tests#index'
-  #end
+ 
+  authenticated :user, lambda {|u| u.type == "Admin"} do
+    root to: "admin/tests#index"
+  end
   root 'tests#index'
 
   resources :tests, only: :index do
