@@ -13,7 +13,7 @@ class Admin::QuestionsController < Admin::BaseController
   def create
     question = @test.questions.new(question_param)
     if question.save
-      redirect_to test_path(question.test_id)
+      redirect_to admin_test_path(question.test_id)
     else
       render plain: "Save error!"
     end
@@ -24,7 +24,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_param)
-      redirect_to test_path(@question.test_id)
+      redirect_to admin_test_path(@question.test_id)
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test_id)
+    redirect_to admin_test_path(@question.test_id)
   end
 
   private
