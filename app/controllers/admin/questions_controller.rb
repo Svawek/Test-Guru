@@ -52,5 +52,6 @@ class Admin::QuestionsController < Admin::BaseController
 
   def rescue_with_question_not_found
     render plain: "Question not found"
+    head 404
   end
 end

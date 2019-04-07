@@ -7,6 +7,6 @@ class Answer < ApplicationRecord
   validate :amount_by_question_id, on: :create
 
   def amount_by_question_id
-#    errors.add(:answers_amount, "can't be more than 4") if question.answers.count > 3
+    errors.add(:answers_amount, "can't be more than 4") if question.answers.count >= 4
   end
 end
