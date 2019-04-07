@@ -23,11 +23,11 @@ users = User.create(
     [{name: 'user1',
       admin: false,
       email: 'wew@wew.org',
-      password_digest: 'dsd'},
+      password: '23rsdf'},
      {name: 'user2',
       admin: true,
       email: 'wrw@wew.org',
-      password_digest: 'dfd'}]
+      password: '7454adf'}]
 )
 
 tests = Test.create(
