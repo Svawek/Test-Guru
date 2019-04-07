@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    application:
+      link_project: "Проект Test Guru"
+      nav_html: "Добро пожаловать, <b>%{name}</b> Гуру | "
+      nav_logout: "Выход"
+      nav_login: "Войти"
+      nav_signup: "Зарегистрироваться"
+      nav_or: "или"

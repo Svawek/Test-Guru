@@ -1,17 +1,17 @@
-<h2>List of Questions for Test "<%= @test.title %>":</h2>
+<h2><%= t('.header', title: @test.title) %></h2>
 <table>
   <tr>
-    <th>Question</th>
-    <th colspan="4">Action</th>
+    <th><%= t('.question') %></th>
+    <th colspan="4"><%= t('.action') %></th>
   </tr>
 
   <%= render 'questions'%>
 </table>
 
 <p>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to t('.link_new_question'), new_admin_test_question_path(@test) %>
 </p>
 
 <p>
-  <%= link_to 'Back', admin_tests_path %>
+  <%= link_to t('.link_back'), admin_tests_path %>
 </p>

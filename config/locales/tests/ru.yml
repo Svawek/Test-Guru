@@ -1,0 +1,50 @@
+ru:
+  admin:
+    tests:
+      create:
+        error: "Ошибка сохранения!"
+        success_create: "Тест создан!"
+      update:
+        success_update: "Тест обновлен!"
+      destroy:
+        success_destroy: "Тест удален!"
+      index:
+        header: "Все тесты"
+        link_new_test: "Новый тест"
+        title: "Название"
+        level: "Уровень"
+        amount_question: "Количество вопросов"
+        action: "Действия"
+      new:
+       header: "Создать Новый Тест"
+       link_back: "Назад"
+      show:
+        header: "Список Вопрос к Тесту \"%{title}\":"
+        question: "Вопрос"
+        action: "Действия"
+        link_new_question: "Новый вопрос"
+        link_back: "Назад"
+      edit:
+        header: "Редактировать %{title} Тест"
+        link_back: "Назад"
+      test:
+        link_view: "Посмотреть"
+        link_edit: "Редактировать"
+        link_delete: "Удалить"
+        delete_confirm: "Вы уверены?"
+      form:
+        button_submit: "Сохранить"
+      questions:
+        link_view: "Посмотреть"
+        link_edit: "Редактировать"
+        link_delete: "Удалить"
+        delete_confirm: "Вы уверены?"
+  tests:
+    index:
+      header: "Все Тесты"
+      title: "Название"
+      level: "Уровень"
+      amount_question: "Количество вопросов"
+      action: "Действия"
+    test:
+      button_start: "Начать тест"
