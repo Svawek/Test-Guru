@@ -1,0 +1,9 @@
+en:
+  layouts:
+    application:
+      link_project: "Test Guru Project"
+      nav_html: "Welcome, <b>%{name}</b> Guru | "
+      nav_logout: "Logout"
+      nav_login: "Login"
+      nav_signup: "Sign up"
+      nav_or: "or"

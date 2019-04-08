@@ -1,0 +1,50 @@
+en:
+  admin:
+    tests:
+      create:
+        error: "Save error!"
+        success_create: "Test created!"
+      update:
+        success_update: "Test updated!"
+      destroy:
+        success_destroy: "Test deleted!"
+      index:
+        header: "All Tests"
+        link_new_test: "New test"
+        title: "Title"
+        level: "Level"
+        amount_question: "Number of questions"
+        action: "Action"
+      new:
+       header: "Create New Test"
+       link_back: "Back"
+      show:
+        header: "List of Questions for Test \"%{title}\":"
+        question: "Question"
+        action: "Action"
+        link_new_question: "New question"
+        link_back: "Back"
+      edit:
+        header: "Edit %{title} Test"
+        link_back: "Back"
+      test:
+        link_view: "View"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        delete_confirm: "Are you sure?"
+      form:
+        button_submit: "Save"
+      questions:
+        link_view: "View"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        delete_confirm: "Are you sure?"
+  tests:
+    index:
+      header: "All Tests"
+      title: "Title"
+      level: "Level"
+      amount_question: "Number of questions"
+      action: "Action"
+    test:
+      button_start: "Start"

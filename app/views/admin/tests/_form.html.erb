@@ -16,6 +16,6 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt:true %>
   </p>
 
-  <%= form.submit "Save" %>
+  <%= form.submit t('.button_submit') %>
 
 <% end %>
