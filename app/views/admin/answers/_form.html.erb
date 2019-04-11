@@ -1,12 +1,13 @@
 <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text, id: :answer_text, rows: 7, cols: 60 %>
+    <%= form.label :text, class: 'form-check-label' %><br>
+    <%= form.text_area :text, id: :answer_text, rows: 7, cols: 60, class: 'form-control' %>
   </p>
 
-  <p>
-    <%= form.label :correct %><br>
-    <%= form.check_box :correct, id: :answer_correct %>
+  <p class="custom-control custom-checkbox">
+    <%= form.check_box :correct, id: :answer_correct, class: 'custom-control-input' %>
+    <%= form.label :correct, class: 'custom-control-label' %><br>
+
   </p>
 
   <%= form.submit %>

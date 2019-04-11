@@ -1,14 +1,16 @@
 <h2>Question #<%= @question.id %>:</h2>
-<p><%= @question.body %></p>
+<h4><%= @question.body %></h4>
 
 <p>
-  <%= render @question.answers %>
+  <ol>
+    <%= render @question.answers %>
+  </ol>
 </p>
 
 <p>
-  <%= link_to 'Create new answer', new_admin_question_answer_path(@question)%>
+  <%= link_to 'Create new answer', new_admin_question_answer_path(@question), class: 'btn btn-link'%>
 </p>
 
 <p>
-  <%= link_to 'Back', admin_test_path(@question.test_id) %> 
+  <%= link_to 'Back', admin_test_path(@question.test_id), class: 'btn btn-primary' %>
 </p>

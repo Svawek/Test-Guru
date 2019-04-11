@@ -2,20 +2,20 @@
   <%= render 'shared/errors', resource: @test %>
 
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :test_title %>
+    <%= form.label :title, class: 'form-check-label' %>
+    <%= form.text_field :title, id: :test_title, class: 'form-control' %>
   </p>
 
   <p>
-    <%= form.label :level %><br>
-    <%= form.text_field :level, id: :test_level%>
+    <%= form.label :level, class: 'form-check-label' %>
+    <%= form.text_field :level, id: :test_level, class: 'form-control' %>
   </p>
 
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt:true %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, {prompt:true}, {class: 'custom-select'} %>
   </p>
 
-  <%= form.submit t('.button_submit') %>
+  <%= form.submit t('.button_submit'), class: 'btn btn-success' %>
 
 <% end %>
