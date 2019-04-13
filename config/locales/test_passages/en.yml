@@ -1,0 +1,5 @@
+en:
+  test_passages:
+    gist:
+      success: "Gist successfully created! /n #{link}"
+      failure: "Gist not created"
