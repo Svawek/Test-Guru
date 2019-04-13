@@ -1,16 +1,20 @@
 <h1><%= t('.header') %></h1>
 
 <p>
-  <%= link_to t('.link_new_test'), new_admin_test_path %>
+  <%= link_to t('.link_new_test'), new_admin_test_path, class: 'btn btn-link' %>
 </p>
-
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.amount_question') %></th>
-    <th colspan="3"><%= t('.amount') %></th>
-  </tr>
-
-  <%= render @tests%>
-</table>
+<div class="col col-md-10">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.amount_question') %></th>
+      <th colspan="3"><%= t('.action') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @tests%>
+    </tbody>
+  </table>
+</div>

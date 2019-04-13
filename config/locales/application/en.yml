@@ -1,7 +1,8 @@
 en:
-  layouts:
-    application:
+  shared:
+    nav:
       link_project: "Test Guru Project"
+      link_admin:  "Edit Project"
       nav_html: "Welcome, <b>%{name}</b> Guru | "
       nav_logout: "Logout"
       nav_login: "Login"

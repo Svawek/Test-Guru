@@ -1,7 +1,8 @@
 ru:
-  layouts:
-    application:
+  shared:
+    nav:
       link_project: "Проект Test Guru"
+      link_admin:  "Редактировать Проект"
       nav_html: "Добро пожаловать, <b>%{name}</b> Гуру | "
       nav_logout: "Выход"
       nav_login: "Войти"

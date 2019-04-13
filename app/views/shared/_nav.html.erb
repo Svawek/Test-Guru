@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <% if current_user.nil? || !current_user.admin? %>
+    <%= link_to t('.link_project'), tests_path, class: "navbar-brand" %>
+  <% else %>
+    <%= link_to t('.link_project'), tests_path, class: "navbar-brand" %> |
+    <%= link_to t('.link_admin'), admin_tests_path, class: "navbar-brand" %>
+  <% end %>
+
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      <%= t('.nav_html', name: current_user.name) %>
+      <%= link_to t('.nav_logout'), destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to t('.nav_login'), new_user_session_path %> <%= t('.nav_or') %> <%= link_to t('.nav_signup'), new_user_registration_path %>
+    <% end %>
+  </span>
+</nav>

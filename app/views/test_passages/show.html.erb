@@ -1,22 +1,26 @@
-<h1>Passing the <%= @test_passage.test.title %> Test</h1>
+<div class="row">
+  <div class="col mt-3">
+    <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
+    <h4 class="mt-5">
+      <%= @test_passage.current_question.body %>
+    </h4>
 
-<p>Current question number: <%= @test_passage.show_progress %></p>
-<p>Total questions in test: <%= @test_passage.show_questions_amount %></p>
+    <p class="mt-2">Current question number: <%= @test_passage.show_progress %> <br>
+    Total questions in test: <%= @test_passage.show_questions_amount %></p>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :text, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+      <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :text, include_hidden: false do |b| %>
+        <p>
+          <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input'%>
+          <%= b.label class: 'form-check-label'%>
+        </p>
+      <% end %>
 
-  <p><%= form.submit 'Next' %></p>
+      <p><%= form.submit 'Next', class: 'btn btn-success' %></p>
 
-<% end %>
+    <% end %>
 
-<p><%= link_to 'Back to all tests', tests_path %></p>
+    <p><%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %></p>
+  </div>
+</div>

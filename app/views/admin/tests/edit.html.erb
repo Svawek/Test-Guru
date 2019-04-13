@@ -1,6 +1,6 @@
 <h1><%= t('.header', title: @test.title) %></h1>
 
 <%= render 'form' %>
-<p>
-  <%= link_to t('.link_back'), admin_tests_path %>
+<p class="mt-3">
+  <%= link_to t('.link_back'), admin_tests_path, class: 'btn btn-primary' %>
 </p>

@@ -1,9 +1,9 @@
 <%= form_with model: [:admin, @test, @question], local: true do |form| %>
   <p>
-    <%= form.label :body %>
-    <%= form.text_field :body, id: :question_body %>
+    <%= form.label :body, class: 'form-check-label'  %>
+    <%= form.text_field :body, id: :question_body, class: 'form-control' %>
   </p>
 
-  <%= form.submit "Save" %>
+  <%= form.submit "Save", class: 'btn btn-success' %>
 
 <% end %>
