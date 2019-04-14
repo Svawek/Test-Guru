@@ -18,16 +18,26 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    flash_options = if result.empty?
+    client = GistQuestionService.new(@test_passage.current_question)
+    begin
+    result = client.call
+    flash_options = if client.success?
                       {notice: t('.success', link: result.html_url)}
                     else
                       {alert: t('.failure')}
                     end
+    rescue Octokit::UnprocessableEntity
+      flash_options = {alert: t('.failure')}
+    end
+    add_gist_info(@test_passage.current_question, result.html_url)
     redirect_to @test_passage, flash_options
   end
 
   private
+
+  def add_gist_info(question, url)
+    question.gists.new(question_id: question.id, url: url, user_id: current_user.id).save
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

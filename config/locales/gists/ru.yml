@@ -1,0 +1,8 @@
+ru:
+  admin:
+    gists:
+      index:
+        header: "Все Gists"
+        question: "Вопрос"
+        url: "Ссылка"
+        email: "Пользовательский email"

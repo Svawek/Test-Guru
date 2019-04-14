@@ -6,8 +6,6 @@
       <%= @test_passage.current_question.body %>
     </h4>
 
-    <p><%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-link' %></p>
-
     <p class="mt-2">Current question number: <%= @test_passage.show_progress %> <br>
     Total questions in test: <%= @test_passage.show_questions_amount %></p>
 
@@ -22,6 +20,10 @@
       <p><%= form.submit 'Next', class: 'btn btn-success' %></p>
 
     <% end %>
+
+    <p>
+      <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-link' %>
+    </p>
 
     <p><%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %></p>
   </div>

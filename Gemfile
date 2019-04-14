@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~>4.0'
 
 #NETWORK
-gem 'faraday'
 gem 'octokit', '~> 4.0'
 
 # Use ActiveStorage variant
@@ -50,6 +49,9 @@ gem 'bootstrap', '~> 4.3.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Environment variables
+  gem 'dotenv-rails'
 end
 
 group :development do

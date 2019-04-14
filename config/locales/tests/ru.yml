@@ -15,6 +15,7 @@ ru:
         level: "Уровень"
         amount_question: "Количество вопросов"
         action: "Действия"
+        gists: "Показать все созданные gists"
       new:
        header: "Создать Новый Тест"
        link_back: "Назад"

@@ -1,0 +1,16 @@
+<h1><%= t('.header') %></h1>
+
+<div class="col col-md-10">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th><%= t('.question') %></th>
+      <th><%= t('.url') %></th>
+      <th><%= t('.email') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @gists%>
+    </tbody>
+  </table>
+</div>
