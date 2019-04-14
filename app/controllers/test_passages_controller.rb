@@ -29,14 +29,14 @@ class TestPassagesController < ApplicationController
     rescue Octokit::UnprocessableEntity
       flash_options = {alert: t('.failure')}
     end
-    add_gist_info(@test_passage.current_question, result.html_url)
+    add_gist_info(@test_passage.current_question, result.html_url) if client.success?
     redirect_to @test_passage, flash_options
   end
 
   private
 
   def add_gist_info(question, url)
-    question.gists.new(question_id: question.id, url: url, user_id: current_user.id).save
+    current_user.gists.create(question_id: question.id, url: url)
   end
 
   def set_test_passage
