@@ -1,0 +1,8 @@
+en:
+  admin:
+    gists:
+      index:
+        header: "All Gists"
+        question: "Question"
+        url: "Link"
+        email: "User email"

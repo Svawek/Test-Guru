@@ -21,6 +21,10 @@
 
     <% end %>
 
+    <p>
+      <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-link' %>
+    </p>
+
     <p><%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %></p>
   </div>
 </div>

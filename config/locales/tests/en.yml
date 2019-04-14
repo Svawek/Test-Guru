@@ -15,6 +15,7 @@ en:
         level: "Level"
         amount_question: "Number of questions"
         action: "Action"
+        gists: "Show all gists"
       new:
        header: "Create New Test"
        link_back: "Back"

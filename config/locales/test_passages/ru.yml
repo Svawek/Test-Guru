@@ -1,0 +1,5 @@
+ru:
+  test_passages:
+    gist:
+      success: "Gist успешно создан! %{link}"
+      failure: "Gist не создан"
