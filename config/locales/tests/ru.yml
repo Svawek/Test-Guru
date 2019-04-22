@@ -40,6 +40,8 @@ ru:
         link_edit: "Редактировать"
         link_delete: "Удалить"
         delete_confirm: "Вы уверены?"
+      form_inline:
+        submit: 'Применить'
   tests:
     index:
       header: "Все Тесты"

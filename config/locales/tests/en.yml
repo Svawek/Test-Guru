@@ -40,6 +40,8 @@ en:
         link_edit: "Edit"
         link_delete: "Delete"
         delete_confirm: "Are you sure?"
+      form_inline:
+        submit: 'Submit'
   tests:
     index:
       header: "All Tests"
