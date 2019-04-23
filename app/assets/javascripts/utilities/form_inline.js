@@ -5,12 +5,12 @@ document.addEventListener('turbolinks:load', function() {
         for (var i = 0; i < controls.length; i++) {
             controls[i].addEventListener('click', formInlineLinkHandler)
         }
-    }
-    var errors = document.querySelector('.resource-errors')
+        var errors = document.querySelector('.resource-errors')
 
-    if (errors) {
-        var resourceId = errors.dataset.resourceId
-        formInlineHandler(resourceId)
+        if (errors) {
+            var resourceId = errors.dataset.resourceId
+            formInlineHandler(resourceId)
+        }
     }
 })
 
@@ -25,7 +25,6 @@ function formInlineHandler(testId) {
     var link = document.querySelector('.form-inline-link[data-test-id = "' + testId + '"]')
     var testTitle = document.querySelector('.test-title[data-test-id = "' + testId + '"]')
     var formInline = document.querySelector('.form-inline[data-test-id = "' + testId + '"]')
-    console.log(testTitle)
 
     if (formInline.classList.contains('hide')) {
         testTitle.classList.add('hide')

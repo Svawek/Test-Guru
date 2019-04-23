@@ -24,13 +24,13 @@ en:
         question: "Question"
         action: "Action"
         link_new_question: "New question"
+        link_edit_test: "Edit Test"
         link_back: "Back"
       edit:
         header: "Edit %{title} Test"
         link_back: "Back"
       test:
         link_view: "View"
-        link_edit: "Edit"
         link_delete: "Delete"
         delete_confirm: "Are you sure?"
       form:
