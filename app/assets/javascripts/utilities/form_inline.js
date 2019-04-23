@@ -1,12 +1,10 @@
 document.addEventListener('turbolinks:load', function() {
     var controls = document.querySelectorAll('.form-inline-link')
-    // выбираем все ссылки Edit
 
     if (controls.length) {
         for (var i = 0; i < controls.length; i++) {
             controls[i].addEventListener('click', formInlineLinkHandler)
         }
-        // вешаем событие click на все ссылки выбранные
     }
     var errors = document.querySelector('.resource-errors')
 
@@ -14,12 +12,10 @@ document.addEventListener('turbolinks:load', function() {
         var resourceId = errors.dataset.resourceId
         formInlineHandler(resourceId)
     }
-    // если есть ошибка, то при обновлении увидим форму для редактирования теста, на котором была ошибка
 })
 
 function formInlineLinkHandler(event) {
     event.preventDefault()
-    //убираем стандартное поведение для ссылки
 
     var testId = this.dataset.testId
     formInlineHandler(testId)
