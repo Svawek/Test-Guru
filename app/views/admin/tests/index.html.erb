@@ -3,6 +3,9 @@
 <p>
   <%= link_to t('.link_new_test'), new_admin_test_path, class: 'btn btn-link' %>
 </p>
+
+<%= render 'shared/errors', resource: @test %>
+
 <div class="col col-md-10">
   <table class="table">
     <thead class="thead-dark">

@@ -24,6 +24,7 @@ ru:
         question: "Вопрос"
         action: "Действия"
         link_new_question: "Новый вопрос"
+        link_edit_test: "Редактировать Тест"
         link_back: "Назад"
       edit:
         header: "Редактировать %{title} Тест"
@@ -40,6 +41,8 @@ ru:
         link_edit: "Редактировать"
         link_delete: "Удалить"
         delete_confirm: "Вы уверены?"
+      form_inline:
+        submit: 'Применить'
   tests:
     index:
       header: "Все Тесты"
