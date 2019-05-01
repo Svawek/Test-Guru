@@ -41,6 +41,9 @@ gem 'octokit', '~> 4.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# MailForm allows you to send an e-mail straight from a form
+gem 'mail_form'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
