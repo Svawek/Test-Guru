@@ -1,0 +1,18 @@
+<%= form_with model: @message, local: true do |form| %>
+  <p>
+    <%= form.label :name, class: 'form-check-label' %><br>
+    <%= form.text_area :name, id: :message_name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :email, class: 'form-check-label' %><br>
+    <%= form.text_area :email, id: :message_email, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :body, class: 'form-check-label' %><br>
+    <%= form.text_area :body, id: :message_body, rows: 7, cols: 60, class: 'form-control' %>
+  </p>
+
+  <%= form.submit 'Send', class: 'btn btn-success mb-3' %>
+<% end %>

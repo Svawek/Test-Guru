@@ -8,7 +8,11 @@ class TestsController < ApplicationController
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    if @test.questions.empty?
+      redirect_to tests_path, alert: 'No questions in this test'
+    else
+      redirect_to current_user.test_passage(@test)
+    end
   end
 
   private
