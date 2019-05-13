@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists
+  has_many :badge_gettings
+  has_many :badges, through: :badge_gettings
 
   EMAIL_FORMAT = /\w+@{1}\w+\.{1}\D+/.freeze
 

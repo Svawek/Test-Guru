@@ -1,0 +1,26 @@
+<h1><%= t('.header') %></h1>
+
+<p>
+  <%= link_to t('.link_new_badge'), new_admin_badge_path, class: 'btn btn-link' %>
+</p>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<div class="col col-md-10">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th><%= t('.name') %></th>
+      <th><%= t('.image') %></th>
+      <th><%= t('.category') %></th>
+      <th><%= t('.element') %></th>
+      <th><%= t('.condition') %></th>
+      <th colspan="3"><%= t('.action') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @badges%>
+    </tbody>
+  </table>
+
+</div>

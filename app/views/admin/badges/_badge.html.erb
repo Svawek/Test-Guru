@@ -1,0 +1,21 @@
+<tr>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= badge.image %></td>
+  <td class="align-middle"><%= badge.category %></td>
+  <td class="align-middle"><%= badge.element %></td>
+  <td class="align-middle"><%= badge.condition %></td>
+  <td class="align-middle"><%= link_to t('.link_view'), admin_badge_path(badge), class: 'btn btn-primary' %></td>
+
+  <td class="align-middle">
+    <%= link_to t('.link_edit'),
+                edit_admin_badge_path(badge),
+                class: 'btn btn-info' %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t('.link_delete'),
+                admin_badge_path(badge),
+                method: :delete,
+                data: {confirm: t('.delete_confirm')},
+                class: 'btn btn-danger' %>
+  </td>
+</tr>

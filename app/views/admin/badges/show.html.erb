@@ -1,0 +1,13 @@
+<div class="col col-md-10">
+  <h2><%= t('.header', name: @badge.name) %></h2>
+
+
+
+  <p>
+    <%= link_to t('.link_edit_badge'), edit_admin_badge_path(@badge), class: 'btn btn-info' %>
+  </p>
+
+  <p>
+    <%= link_to t('.link_back'), admin_badges_path, class: 'btn btn-primary' %>
+  </p>
+</div>

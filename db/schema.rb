@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_085723) do
+ActiveRecord::Schema.define(version: 2019_05_04_194630) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id", null: false
@@ -19,6 +22,25 @@ ActiveRecord::Schema.define(version: 2019_04_14_085723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_gettings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_badge_gettings_on_badge_id"
+    t.index ["user_id"], name: "index_badge_gettings_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image", null: false
+    t.string "category"
+    t.integer "element"
+    t.string "condition"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -104,4 +126,6 @@ ActiveRecord::Schema.define(version: 2019_04_14_085723) do
     t.index ["user_id"], name: "index_users_tests_on_user_id"
   end
 
+  add_foreign_key "badge_gettings", "badges"
+  add_foreign_key "badge_gettings", "users"
 end
