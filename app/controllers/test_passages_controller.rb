@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update gist]
+  before_action :set_test_passage, only: %i[show result update gist badge]
   
   def show
   end
@@ -31,6 +31,17 @@ class TestPassagesController < ApplicationController
     end
     add_gist_info(@test_passage.current_question, result.html_url) if client.success?
     redirect_to @test_passage, flash_options
+  end
+
+  def badge
+    Badge.all.each do |b|
+      badge = Badge.new(b, @test_passage.test_id)
+      flash_options = if send "#{b.condition}_check?", badge
+                        { notice: "You win badge #{badge.name}" }
+                      end
+      redirect_to
+      end
+    end
   end
 
   private
