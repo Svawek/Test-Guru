@@ -2,8 +2,19 @@
 
 <% if @test_passage.passed? %>
   <p class="passed">Your result is: <%= @test_passage.result_percent %> %. You passed Test</p>
-<% else %>
-  <p class="failed">Your result is: <%= @test_passage.result_percent %> %. You didn't pass Test</p>
+  <% if @badges_received.present? %>
+    <p>You received such badges:</p>
+    <ol>
+      <% @badges_received.each do |badge_received| %>
+        <li>
+          <%= badge_received.badge.name %> <br>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK781GVB-NgBKi2t5tN4A4phT12dQp2FfzjTQjcwWFpBs6rEpvIw">
+        </li>
+      <% end %>
+    </ol>
+  <% else %>
+    <p class="failed">Your result is: <%= @test_passage.result_percent %> %. You didn't pass Test</p>
+  <% end %>
 <% end %>
 
 <p><%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %></p>

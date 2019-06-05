@@ -5,12 +5,17 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    @badges_received = BadgeGetting.where(test_passage_id: @test_passage.id)
   end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+      if @test_passage.passed?
+        badge
+        TestsMailer.completed_test(@test_passage).deliver_now
+      end
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -34,12 +39,10 @@ class TestPassagesController < ApplicationController
   end
 
   def badge
-    Badge.all.each do |b|
-      badge = Badge.new(b, @test_passage.test_id)
-      flash_options = if send "#{b.condition}_check?", badge
-                        { notice: "You win badge #{badge.name}" }
-                      end
-      redirect_to
+    get_badge = BadgeAwardService.new(@test_passage.test.id, current_user)
+    Badge.all.each do |badge|
+      if get_badge.send("#{badge.condition}_check?", badge)
+        get_badge.add_badge_to_user(badge, @test_passage.id)
       end
     end
   end

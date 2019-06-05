@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_194630) do
+ActiveRecord::Schema.define(version: 2019_05_22_192110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,9 @@ ActiveRecord::Schema.define(version: 2019_05_04_194630) do
     t.bigint "badge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "test_passage_id"
     t.index ["badge_id"], name: "index_badge_gettings_on_badge_id"
+    t.index ["test_passage_id"], name: "index_badge_gettings_on_test_passage_id"
     t.index ["user_id"], name: "index_badge_gettings_on_user_id"
   end
 
@@ -127,5 +129,6 @@ ActiveRecord::Schema.define(version: 2019_05_04_194630) do
   end
 
   add_foreign_key "badge_gettings", "badges"
+  add_foreign_key "badge_gettings", "test_passages"
   add_foreign_key "badge_gettings", "users"
 end
