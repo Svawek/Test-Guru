@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'badge_gettings/show'
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, controllers: {sessions: "sessions"}
  
   authenticated :user, lambda {|u| u.type == "Admin"} do
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
       post :gist
     end
   end
+
+  resource :badge_gettings, only: :show
 
   resource :messages, only: %i[new create]
 

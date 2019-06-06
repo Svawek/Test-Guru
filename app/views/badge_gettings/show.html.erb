@@ -1,0 +1,33 @@
+<div class="col col-md-10">
+  <h1><%= t('.header') %></h1>
+  <h2><%= t('.header_badges') %></h2>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>
+        <%= t('.title') %>
+      </th>
+      <th><%= t('.image') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @badges %>
+    </tbody>
+  </table>
+
+  <h2><%= t('.header_badges_received') %></h2>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>
+        <%= t('.test_name') %>
+      </th>
+      <th><%= t('.badge_name') %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @badges_received %>
+    </tbody>
+  </table>
+</div>
