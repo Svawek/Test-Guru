@@ -16,6 +16,11 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, {prompt:true}, {class: 'custom-select'} %>
   </p>
 
+  <p>
+    <%= form.label :timer %>
+    <%= form.number_field :timer, in: 1..100, step: 1 %>
+  </p>
+
   <%= form.submit t('.button_submit'), class: 'btn btn-success' %>
 
 <% end %>
