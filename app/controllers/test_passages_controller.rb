@@ -1,5 +1,6 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update gist badge]
+  before_action :set_test_passage, only: %i[show result update gist badge check_timer]
+  before_action :check_timer, only: %i[show update]
   
   def show
   end
@@ -10,7 +11,7 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
-    if @test_passage.completed?
+    if @test_passage.completed? || @time_left <= 0
       if @test_passage.passed?
         badge
         TestsMailer.completed_test(@test_passage).deliver_now
@@ -55,6 +56,14 @@ class TestPassagesController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def check_timer
+    time_for_test = @test_passage.test.timer * 60
+    time_now = Time.now
+    time_passed = time_now - @test_passage.created_at
+    @time_left = time_for_test - time_passed
+    update if @time_left <= 0
   end
 end
 

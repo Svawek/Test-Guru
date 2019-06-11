@@ -12,9 +12,9 @@
         </li>
       <% end %>
     </ol>
-  <% else %>
-    <p class="failed">Your result is: <%= @test_passage.result_percent %> %. You didn't pass Test</p>
   <% end %>
+<% else %>
+  <p class="failed">Your result is: <%= @test_passage.result_percent %> %. You didn't pass Test</p>
 <% end %>
 
 <p><%= link_to 'Back to all tests', tests_path, class: 'btn btn-primary' %></p>
