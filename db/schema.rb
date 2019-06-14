@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_185141) do
+ActiveRecord::Schema.define(version: 2019_06_14_194514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,17 +22,6 @@ ActiveRecord::Schema.define(version: 2019_06_09_185141) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
-  end
-
-  create_table "badge_gettings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "badge_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "test_passage_id"
-    t.index ["badge_id"], name: "index_badge_gettings_on_badge_id"
-    t.index ["test_passage_id"], name: "index_badge_gettings_on_test_passage_id"
-    t.index ["user_id"], name: "index_badge_gettings_on_user_id"
   end
 
   create_table "badges", force: :cascade do |t|
@@ -118,6 +107,17 @@ ActiveRecord::Schema.define(version: 2019_06_09_185141) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  create_table "users_badges", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "test_passage_id"
+    t.index ["badge_id"], name: "index_users_badges_on_badge_id"
+    t.index ["test_passage_id"], name: "index_users_badges_on_test_passage_id"
+    t.index ["user_id"], name: "index_users_badges_on_user_id"
+  end
+
   create_table "users_tests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "test_id"
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_185141) do
     t.index ["user_id"], name: "index_users_tests_on_user_id"
   end
 
-  add_foreign_key "badge_gettings", "badges"
-  add_foreign_key "badge_gettings", "test_passages"
-  add_foreign_key "badge_gettings", "users"
+  add_foreign_key "users_badges", "badges"
+  add_foreign_key "users_badges", "test_passages"
+  add_foreign_key "users_badges", "users"
 end

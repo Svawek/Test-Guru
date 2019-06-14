@@ -6,14 +6,14 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    @badges_received = BadgeGetting.where(test_passage_id: @test_passage.id)
+    @badges_received = UsersBadge.where(test_passage_id: @test_passage.id)
   end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed? || @time_left <= 0
       if @test_passage.passed?
-        badge
+        earn_badge
         TestsMailer.completed_test(@test_passage).deliver_now
       end
 
@@ -39,13 +39,9 @@ class TestPassagesController < ApplicationController
     redirect_to @test_passage, flash_options
   end
 
-  def badge
-    get_badge = BadgeAwardService.new(@test_passage.test.id, current_user)
-    Badge.all.each do |badge|
-      if get_badge.send("#{badge.condition}_check?", badge)
-        get_badge.add_badge_to_user(badge, @test_passage.id)
-      end
-    end
+  def earn_badge
+    BadgeAwardService.new(@test_passage)
+
   end
 
   private

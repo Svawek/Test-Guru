@@ -1,5 +1,5 @@
 en:
-  badge_gettings:
+  users_badges:
     show:
       header: 'All available badges and all received badges'
       header_badges: 'All badges'
