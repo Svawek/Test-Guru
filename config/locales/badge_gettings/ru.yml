@@ -1,0 +1,10 @@
+ru:
+  badge_gettings:
+    show:
+      header: 'Все доступные бэйджи и все полученные бэйджи'
+      header_badges: 'Все бэйджи'
+      title: 'Название бэйджа'
+      image: "Картинка бэйджа"
+      header_badges_received: 'Все полученные бэйджи'
+      test_name: 'Название теста'
+      badge_name: 'Название бэйджа'

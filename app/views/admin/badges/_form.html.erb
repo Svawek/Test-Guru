@@ -1,0 +1,31 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :name, class: 'form-check-label' %>
+    <%= form.text_field :name, id: :badge_name, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :image, class: 'form-check-label' %>
+    <%= form.text_field :image, id: :badge_image, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :category, class: 'form-check-label' %>
+    <%= form.select :category, Badge::ACCEPTABLE_CATEGORY %>
+  </p>
+
+  <p>
+    <%= form.label :element, class: 'form-check-label' %>
+    <%= form.text_field :element, id: :badge_element, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :condition, class: 'form-check-label' %>
+    <%= form.select :condition, Badge::ACCEPTABLE_CONDITION, class: 'custom-select' %>
+  </p>
+
+  <%= form.submit t('.button_submit'), class: 'btn btn-success' %>
+
+<% end %>

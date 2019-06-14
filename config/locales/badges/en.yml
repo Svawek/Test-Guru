@@ -1,0 +1,35 @@
+en:
+  admin:
+    badges:
+      create:
+        success_create: "Badge created!"
+      update:
+        success_update: "Badge updated!"
+      destroy:
+        success_destroy: "Badge deleted!"
+      index:
+        header: "All Badges"
+        link_new_badge: "New badge"
+        name: "Name"
+        image: "Image"
+        category: "Category"
+        element: "Element"
+        condition: "Condition"
+        action: "Action"
+      new:
+        header: "Create New Badge"
+        link_back: "Back"
+      show:
+        header: "Information about Badge \"%{name}\":"
+        link_edit_badge: "Edit Badge"
+        link_back: "Back"
+      edit:
+        header: "Edit %{name} Badge"
+        link_back: "Back"
+      badge:
+        link_view: "View"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        delete_confirm: "Are you sure?"
+      form:
+        button_submit: "Save"

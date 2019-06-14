@@ -1,0 +1,10 @@
+en:
+  users_badges:
+    show:
+      header: 'All available badges and all received badges'
+      header_badges: 'All badges'
+      title: 'Name of badge'
+      image: "Image"
+      header_badges_received: 'All received badges'
+      test_name: 'Name of test'
+      badge_name: 'Name of badge'

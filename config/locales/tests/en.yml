@@ -16,6 +16,7 @@ en:
         amount_question: "Number of questions"
         action: "Action"
         gists: "Show all gists"
+        badges: "Show all badges"
       new:
        header: "Create New Test"
        link_back: "Back"

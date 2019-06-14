@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users_badges/show'
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, controllers: {sessions: "sessions"}
  
   authenticated :user, lambda {|u| u.type == "Admin"} do
@@ -21,6 +22,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :badge_gettings, only: :show
+
   resource :messages, only: %i[new create]
 
   namespace :admin do
@@ -32,5 +35,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges
   end
 end

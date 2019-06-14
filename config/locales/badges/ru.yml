@@ -1,0 +1,35 @@
+ru:
+  admin:
+    badges:
+      create:
+        success_create: "Бэйдж создан!"
+      update:
+        success_update: "Бэйдж обновлен!"
+      destroy:
+        success_destroy: "Бэйдж удален!"
+      index:
+        header: "Все бэйджи"
+        link_new_badge: "Новый бэйдж"
+        name: "Имя"
+        image: "Рисунок"
+        category: "Категория"
+        element: "Элемент"
+        condition: "Условия"
+        action: "Действия"
+      new:
+        header: "Создать Новый Бэйдж"
+        link_back: "Назад"
+      show:
+        header: "Информация про Бэйдж \"%{name}\":"
+        link_edit_badge: "Редактировать Бэйдж"
+        link_back: "Назад"
+      edit:
+        header: "Редактировать %{name} Бэйдж"
+        link_back: "Назад"
+      badge:
+        link_view: "Посмотреть"
+        link_edit: "Редактировать"
+        link_delete: "Удалить"
+        delete_confirm: "Вы уверены?"
+      form:
+        button_submit: "Сохранить"
